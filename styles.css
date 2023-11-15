@@ -1,0 +1,45 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #212121;
+}
+
+h1 {
+  color: #fff;
+}
+
+.search-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#search-form {
+  margin: 20px 0;
+}
+
+#form-input {
+  padding: 5px;
+}
+
+#remove-btn {
+  margin: 10px;
+  padding: 5px 10px;
+  background-color: #f55938;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.gif-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gif {
+  margin: 10px;
+}
