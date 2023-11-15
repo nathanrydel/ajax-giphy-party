@@ -10,11 +10,10 @@ const $formInput = $("#form-input");
 const $gifContainer = $(".gif-container");
 const $removeButton = $("#remove-btn");
 
-// TODO: Grab the search term from the DOM
+// TODO: Create a form submission listener to Grab the search term from the DOM
+// On submission get the val from the field
 
-// TODO: Create a form submission listener
-
-// TODO: Handle form submission
+// TODO: Search GIPHY for the GIF
 
 // TODO: Append the GIF to the DOM
 
