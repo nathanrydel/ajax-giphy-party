@@ -25,12 +25,18 @@ function getFormInput(evt) {
 async function searchGiphy(searchTerm) {
   const searchParam = new URLSearchParams({searchTerm});
   const response = await fetch(`http://api.giphy.com/v1/gifs/search?q=${searchParam}&api_key=${apiKey}`);
-  const gif = await response.text();
-
+  const gifs = await response.json();
+  const gif = gifs.data[0];
+  addGifImg(gif);
 }
 
-
 // TODO: Append the GIF to the DOM
+function addGifImg(gif) {
+  const imgSrc = gif.url;
+  const gifImg = $("<img>").attr('src', imgSrc);
+  $gifContainer.append(gifImg);
+}
+
 
 // TODO: Remove all GIFs from the DOM
 
