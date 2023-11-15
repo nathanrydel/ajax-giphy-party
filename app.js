@@ -1,9 +1,14 @@
 // TODO: Create variables
 // apiKey
-// URL
+// URL?
 // $formInput
 // $gifContainer
 // $removeButton
+
+const apiKey = "MhAodEJIJxQMxW9XqxKjyXfNYdLoOIym";
+const $formInput = $("#form-input");
+const $gifContainer = $(".gif-container");
+const $removeButton = $("#remove-btn");
 
 // TODO: Grab the search term from the DOM
 
