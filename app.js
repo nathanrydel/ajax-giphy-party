@@ -1,3 +1,4 @@
+"use strict";
 // TODO: Create variables
 // apiKey
 // URL?
@@ -15,24 +16,29 @@ const $removeButton = $("#remove-btn");
 $formInput.on("submit", getFormInput);
 
 function getFormInput(evt) {
-  evt.preventDefault();
+  $(evt.target).preventDefault();
   const $formVal = $formInput.val();
+  console.log("Loggin form input val", $formVal);
   searchGiphy($formVal);
 }
 
 // TODO: Search GIPHY for the GIF
 
 async function searchGiphy(searchTerm) {
-  const searchParam = new URLSearchParams({searchTerm});
+  const searchParam = searchTerm;
+  console.log("logging searchParam", searchParam);
+  console.log(`http://api.giphy.com/v1/gifs/search?q=${searchParam}&api_key=${apiKey}`);
   const response = await fetch(`http://api.giphy.com/v1/gifs/search?q=${searchParam}&api_key=${apiKey}`);
   const gifs = await response.json();
   const gif = gifs.data[0];
   addGifImg(gif);
+  return gif;
 }
 
 // TODO: Append the GIF to the DOM
 function addGifImg(gif) {
-  const imgSrc = gif.url;
+  const imgSrc = gif.images.fixed_height.url;
+  console.log("What is imgSrc", imgSrc);
   const gifImg = $("<img>").attr('src', imgSrc);
   $gifContainer.append(gifImg);
 }
@@ -40,3 +46,8 @@ function addGifImg(gif) {
 
 // TODO: Remove all GIFs from the DOM
 
+function removeGifs() {
+  $gifContainer.empty();
+}
+
+$removeButton.on("click", removeGifs);
